@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,10 @@
     <title>Dasun Udayanga | Portfolio</title>
 
     <meta name="description"
-          content="Personal portfolio of Imalka Fernando - creative, technology-focused and fast-learning professional.">
+        content="Personal portfolio of Dasun Udayanga - creative, technology-focused and fast-learning professional.">
 
     <style>
+
         /* =========================================================
            RESET & GLOBAL
         ========================================================= */
@@ -30,7 +32,6 @@
             color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            transition: background 0.3s ease, color 0.3s ease;
         }
 
         a {
@@ -49,6 +50,7 @@
             color: white;
         }
 
+
         /* =========================================================
            VARIABLES
         ========================================================= */
@@ -66,16 +68,6 @@
             --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
         }
 
-        body.light {
-            --bg: #f6f6fa;
-            --bg-secondary: #ffffff;
-            --card: rgba(0, 0, 0, 0.035);
-            --card-hover: rgba(0, 0, 0, 0.06);
-            --text: #111118;
-            --text-secondary: #5f5f6e;
-            --border: rgba(0, 0, 0, 0.1);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-        }
 
         /* =========================================================
            SCROLLBAR
@@ -93,6 +85,7 @@
             background: var(--primary);
             border-radius: 20px;
         }
+
 
         /* =========================================================
            BACKGROUND EFFECTS
@@ -133,6 +126,7 @@
             left: 30%;
         }
 
+
         /* =========================================================
            CONTAINER
         ========================================================= */
@@ -141,6 +135,7 @@
             width: min(1150px, 90%);
             margin: auto;
         }
+
 
         /* =========================================================
            HEADER
@@ -161,10 +156,6 @@
             background: rgba(7, 7, 12, 0.75);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
-        }
-
-        body.light header.scrolled {
-            background: rgba(255, 255, 255, 0.8);
         }
 
         .nav {
@@ -207,30 +198,24 @@
             gap: 10px;
         }
 
-        .icon-btn,
         .menu-btn {
             width: 42px;
             height: 42px;
-            border-radius: 50%;
+            border-radius: 10px;
             border: 1px solid var(--border);
             background: var(--card);
             color: var(--text);
             cursor: pointer;
-            display: grid;
+            display: none;
             place-items: center;
             transition: 0.25s ease;
         }
 
-        .icon-btn:hover,
         .menu-btn:hover {
             background: var(--card-hover);
             transform: translateY(-2px);
         }
 
-        .menu-btn {
-            display: none;
-            border-radius: 10px;
-        }
 
         /* =========================================================
            BUTTONS
@@ -270,6 +255,7 @@
             transform: translateY(-3px);
             background: var(--card-hover);
         }
+
 
         /* =========================================================
            HERO
@@ -334,18 +320,6 @@
             animation: gradientMove 5s linear infinite;
         }
 
-        body.light .gradient-text {
-            background: linear-gradient(
-                120deg,
-                #111118,
-                #7c3aed,
-                #4f46e5
-            );
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-        }
-
         @keyframes gradientMove {
             to {
                 background-position: 200% center;
@@ -382,8 +356,9 @@
             font-size: 0.82rem;
         }
 
+
         /* =========================================================
-           HERO CARD
+           HERO PROFILE CARD
         ========================================================= */
 
         .hero-card {
@@ -396,12 +371,14 @@
             width: 340px;
             height: 430px;
             border-radius: 30px;
+
             background:
                 linear-gradient(
                     145deg,
                     rgba(139, 92, 246, 0.18),
                     rgba(255, 255, 255, 0.03)
                 );
+
             border: 1px solid var(--border);
             box-shadow: var(--shadow);
             position: relative;
@@ -431,27 +408,45 @@
             inset: 20px;
             border: 1px solid var(--border);
             border-radius: 22px;
+
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
+
             text-align: center;
+            padding: 20px;
         }
 
-        .avatar {
-            width: 130px;
-            height: 130px;
+
+        /* =========================================================
+           PROFILE IMAGE
+        ========================================================= */
+
+        .profile-image {
+            width: 150px;
+            height: 150px;
+
             border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background:
-                linear-gradient(135deg, #8b5cf6, #4f46e5);
-            font-size: 3rem;
-            font-weight: 800;
+
+            object-fit: cover;
+            object-position: center;
+
+            display: block;
+
             margin-bottom: 25px;
+
+            border: 4px solid rgba(167, 139, 250, 0.5);
+
             box-shadow:
-                0 0 0 10px rgba(139, 92, 246, 0.08),
-                0 20px 50px rgba(139, 92, 246, 0.3);
+                0 0 0 8px rgba(139, 92, 246, 0.08),
+                0 20px 50px rgba(139, 92, 246, 0.35);
+
+            transition: 0.3s ease;
+        }
+
+        .profile-image:hover {
+            transform: scale(1.05);
         }
 
         .profile-card h3 {
@@ -464,6 +459,11 @@
             font-size: 0.9rem;
         }
 
+
+        /* =========================================================
+           FLOATING CARDS
+        ========================================================= */
+
         .floating-card {
             position: absolute;
             padding: 13px 17px;
@@ -473,10 +473,6 @@
             border-radius: 14px;
             box-shadow: var(--shadow);
             font-size: 0.82rem;
-        }
-
-        body.light .floating-card {
-            background: rgba(255, 255, 255, 0.8);
         }
 
         .floating-card.one {
@@ -492,7 +488,9 @@
         }
 
         @keyframes float {
-            0%, 100% {
+
+            0%,
+            100% {
                 transform: translateY(0);
             }
 
@@ -500,6 +498,7 @@
                 transform: translateY(-12px);
             }
         }
+
 
         /* =========================================================
            SECTIONS
@@ -536,6 +535,7 @@
             font-size: 1rem;
         }
 
+
         /* =========================================================
            ABOUT
         ========================================================= */
@@ -551,14 +551,17 @@
             min-height: 400px;
             border: 1px solid var(--border);
             border-radius: 30px;
+
             background:
                 linear-gradient(
                     135deg,
                     rgba(139, 92, 246, 0.14),
                     rgba(255, 255, 255, 0.025)
                 );
+
             display: grid;
             place-items: center;
+
             position: relative;
             overflow: hidden;
         }
@@ -613,6 +616,7 @@
             font-size: 0.75rem;
         }
 
+
         /* =========================================================
            SKILLS
         ========================================================= */
@@ -656,6 +660,7 @@
             color: var(--text-secondary);
             font-size: 0.88rem;
         }
+
 
         /* =========================================================
            EXPERIENCE
@@ -721,6 +726,7 @@
             color: var(--text-secondary);
         }
 
+
         /* =========================================================
            PROJECTS
         ========================================================= */
@@ -749,9 +755,18 @@
             height: 210px;
             position: relative;
             overflow: hidden;
+
             background:
-                radial-gradient(circle at 20% 30%, rgba(139, 92, 246, 0.5), transparent 30%),
-                radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.35), transparent 30%),
+                radial-gradient(
+                    circle at 20% 30%,
+                    rgba(139, 92, 246, 0.5),
+                    transparent 30%
+                ),
+                radial-gradient(
+                    circle at 80% 70%,
+                    rgba(59, 130, 246, 0.35),
+                    transparent 30%
+                ),
                 #11111b;
         }
 
@@ -813,6 +828,7 @@
             font-weight: 700;
         }
 
+
         /* =========================================================
            CTA
         ========================================================= */
@@ -822,12 +838,14 @@
             border: 1px solid var(--border);
             border-radius: 30px;
             text-align: center;
+
             background:
                 radial-gradient(
                     circle at center,
                     rgba(139, 92, 246, 0.15),
                     transparent 65%
                 );
+
             overflow: hidden;
             position: relative;
         }
@@ -843,14 +861,15 @@
             margin: 0 auto 28px;
         }
 
+
         /* =========================================================
            CONTACT
         ========================================================= */
 
         .contact-grid {
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 50px;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
         }
 
         .contact-info {
@@ -859,74 +878,54 @@
         }
 
         .contact-card {
-            padding: 20px;
+            padding: 25px;
             border: 1px solid var(--border);
             background: var(--card);
             border-radius: 16px;
+            transition: 0.3s ease;
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+            border-color: rgba(139, 92, 246, 0.4);
         }
 
         .contact-card small {
             display: block;
             color: var(--text-secondary);
-            margin-bottom: 5px;
+            margin-bottom: 7px;
         }
 
         .contact-card strong {
-            font-size: 0.95rem;
+            font-size: 1rem;
         }
 
-        .contact-form {
-            display: grid;
-            gap: 15px;
+        .contact-card a {
+            color: var(--primary-light);
         }
 
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-        }
-
-        .input-group {
-            display: grid;
-            gap: 8px;
-        }
-
-        .input-group label {
-            font-size: 0.8rem;
-            color: var(--text-secondary);
-        }
-
-        .input-group input,
-        .input-group textarea {
-            width: 100%;
-            padding: 14px 15px;
-            border-radius: 12px;
+        .contact-message {
+            padding: 35px;
             border: 1px solid var(--border);
-            outline: none;
             background: var(--card);
-            color: var(--text);
-            transition: 0.25s ease;
+            border-radius: 20px;
+
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .input-group textarea {
-            min-height: 150px;
-            resize: vertical;
+        .contact-message h3 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
         }
 
-        .input-group input:focus,
-        .input-group textarea:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        .contact-message p {
+            color: var(--text-secondary);
+            margin-bottom: 25px;
         }
 
-        .form-message {
-            display: none;
-            padding: 12px;
-            border-radius: 10px;
-            background: rgba(34, 197, 94, 0.1);
-            color: #4ade80;
-            font-size: 0.85rem;
-        }
 
         /* =========================================================
            FOOTER
@@ -974,6 +973,7 @@
             transform: translateY(-3px);
         }
 
+
         /* =========================================================
            SCROLL REVEAL
         ========================================================= */
@@ -981,13 +981,16 @@
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition: opacity 0.7s ease, transform 0.7s ease;
+            transition:
+                opacity 0.7s ease,
+                transform 0.7s ease;
         }
 
         .reveal.show {
             opacity: 1;
             transform: translateY(0);
         }
+
 
         /* =========================================================
            RESPONSIVE
@@ -996,8 +999,7 @@
         @media (max-width: 950px) {
 
             .hero-grid,
-            .about-grid,
-            .contact-grid {
+            .about-grid {
                 grid-template-columns: 1fr;
             }
 
@@ -1027,10 +1029,15 @@
                 grid-template-columns: 1fr 1fr;
             }
 
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
             .about-visual {
                 min-height: 300px;
             }
         }
+
 
         @media (max-width: 700px) {
 
@@ -1044,21 +1051,22 @@
                 left: 5%;
                 width: 90%;
                 padding: 20px;
+
                 background: rgba(14, 14, 22, 0.96);
                 backdrop-filter: blur(20px);
+
                 border: 1px solid var(--border);
                 border-radius: 18px;
+
                 flex-direction: column;
                 align-items: flex-start;
                 gap: 18px;
+
                 opacity: 0;
                 visibility: hidden;
                 transform: translateY(-10px);
-                transition: 0.25s ease;
-            }
 
-            body.light .nav-links {
-                background: rgba(255,255,255,0.96);
+                transition: 0.25s ease;
             }
 
             .nav-links.open {
@@ -1085,6 +1093,11 @@
                 height: 380px;
             }
 
+            .profile-image {
+                width: 125px;
+                height: 125px;
+            }
+
             .floating-card.one {
                 left: 0;
             }
@@ -1102,10 +1115,6 @@
                 padding: 80px 0;
             }
 
-            .form-row {
-                grid-template-columns: 1fr;
-            }
-
             .cta {
                 padding: 55px 25px;
             }
@@ -1115,6 +1124,7 @@
                 text-align: center;
             }
         }
+
 
         @media (max-width: 450px) {
 
@@ -1137,21 +1147,37 @@
             .hero-info {
                 gap: 20px;
             }
+
+            .profile-card {
+                width: 275px;
+                height: 365px;
+            }
+
+            .floating-card {
+                font-size: 0.72rem;
+                padding: 10px 12px;
+            }
         }
+
     </style>
 </head>
 
+
 <body>
+
 
     <!-- =========================================================
          BACKGROUND
     ========================================================== -->
 
     <div class="background">
+
         <div class="glow one"></div>
         <div class="glow two"></div>
         <div class="glow three"></div>
+
     </div>
+
 
 
     <!-- =========================================================
@@ -1163,25 +1189,56 @@
         <div class="container nav">
 
             <a href="#home" class="logo">
-                IMALKA<span>.</span>
+                Dasun<span>.</span>
             </a>
 
+
             <nav>
+
                 <ul class="nav-links" id="navLinks">
-                    <li><a href="#home" class="nav-link active">Home</a></li>
-                    <li><a href="#about" class="nav-link">About</a></li>
-                    <li><a href="#skills" class="nav-link">Skills</a></li>
-                    <li><a href="#experience" class="nav-link">Experience</a></li>
-                    <li><a href="#projects" class="nav-link">Projects</a></li>
-                    <li><a href="#contact" class="nav-link">Contact</a></li>
+
+                    <li>
+                        <a href="#home" class="nav-link active">
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#about" class="nav-link">
+                            About
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#skills" class="nav-link">
+                            Skills
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#experience" class="nav-link">
+                            Experience
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#projects" class="nav-link">
+                            Projects
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#contact" class="nav-link">
+                            Contact
+                        </a>
+                    </li>
+
                 </ul>
+
             </nav>
 
-            <div class="nav-actions">
 
-                <button class="icon-btn" id="themeToggle" title="Change theme">
-                    ☀
-                </button>
+            <div class="nav-actions">
 
                 <button class="menu-btn" id="menuBtn">
                     ☰
@@ -1194,7 +1251,9 @@
     </header>
 
 
+
     <main>
+
 
         <!-- =====================================================
              HERO
@@ -1204,27 +1263,41 @@
 
             <div class="container hero-grid">
 
+
                 <div class="hero-content reveal">
 
                     <div class="badge">
+
                         <span class="status-dot"></span>
+
                         Available for opportunities
+
                     </div>
 
+
                     <h1>
+
                         Hi, I'm
+
                         <span class="gradient-text">
-                            Imalka
+                            Dasun
                         </span>
+
                         <br>
-                        Fernando.
+
+                        Udayanga
+
                     </h1>
 
+
                     <p class="hero-description">
+
                         A fast-learning, tech-savvy professional who enjoys
                         technology, creativity, business ideas and building
                         meaningful digital experiences.
+
                     </p>
+
 
                     <div class="hero-buttons">
 
@@ -1238,21 +1311,39 @@
 
                     </div>
 
+
                     <div class="hero-info">
 
                         <div class="info-item">
+
                             <strong>01+</strong>
-                            <span>Years Learning</span>
+
+                            <span>
+                                Years Learning
+                            </span>
+
                         </div>
 
+
                         <div class="info-item">
+
                             <strong>10+</strong>
-                            <span>Skills & Interests</span>
+
+                            <span>
+                                Skills & Interests
+                            </span>
+
                         </div>
 
+
                         <div class="info-item">
+
                             <strong>∞</strong>
-                            <span>Ideas</span>
+
+                            <span>
+                                Ideas
+                            </span>
+
                         </div>
 
                     </div>
@@ -1260,17 +1351,31 @@
                 </div>
 
 
+
+                <!-- =================================================
+                     PROFILE CARD
+                ================================================== -->
+
                 <div class="hero-card reveal">
 
                     <div class="profile-card">
 
                         <div class="profile-card-inner">
 
-                            <div class="avatar">
-                                IF
-                            </div>
 
-                            <h3>Imalka Fernando</h3>
+                            <!-- YOUR PROFILE IMAGE -->
+
+                            <img
+                                src="./27569.jpg"
+                                alt="Dasun Udayanga"
+                                class="profile-image"
+                            >
+
+
+                            <h3>
+                                Dasun Udayanga
+                            </h3>
+
 
                             <p>
                                 Tech • Creativity • Business
@@ -1280,12 +1385,18 @@
 
                     </div>
 
+
                     <div class="floating-card one">
+
                         ⚡ Fast Learner
+
                     </div>
 
+
                     <div class="floating-card two">
+
                         🚀 Always Building
+
                     </div>
 
                 </div>
@@ -1293,6 +1404,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
@@ -1303,30 +1415,41 @@
 
             <div class="container">
 
+
                 <div class="section-header reveal">
 
                     <div class="section-label">
                         About Me
                     </div>
 
+
                     <h2 class="section-title">
+
                         Curious mind.
+
                         <br>
+
                         <span class="gradient-text">
                             Constant growth.
                         </span>
+
                     </h2>
 
+
                     <p class="section-description">
+
                         I believe the best way to grow is to stay curious,
                         learn new things and actually put knowledge into
                         practice.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="about-grid">
+
 
                     <div class="about-visual reveal">
 
@@ -1341,48 +1464,83 @@
                     </div>
 
 
+
                     <div class="about-content reveal">
 
                         <p>
+
                             I'm someone who enjoys exploring different fields,
                             especially technology, digital creativity,
                             business and practical problem solving.
+
                         </p>
 
+
                         <p>
+
                             My journey has taken me through education,
                             hospitality, technology learning and business
                             ideas. Each experience has taught me something
                             valuable.
+
                         </p>
 
+
                         <p>
+
                             I don't believe in staying limited to one skill.
                             I enjoy learning, experimenting and finding better
                             ways to do things.
+
                         </p>
+
 
                         <ul class="about-list">
 
+
                             <li>
-                                <span class="check">✓</span>
+
+                                <span class="check">
+                                    ✓
+                                </span>
+
                                 Fast learner and adaptable
+
                             </li>
 
+
                             <li>
-                                <span class="check">✓</span>
+
+                                <span class="check">
+                                    ✓
+                                </span>
+
                                 Interested in technology and digital work
+
                             </li>
 
+
                             <li>
-                                <span class="check">✓</span>
+
+                                <span class="check">
+                                    ✓
+                                </span>
+
                                 Entrepreneurial mindset
+
                             </li>
 
+
                             <li>
-                                <span class="check">✓</span>
+
+                                <span class="check">
+                                    ✓
+                                </span>
+
                                 Always looking for new opportunities
+
                             </li>
+
 
                         </ul>
 
@@ -1395,6 +1553,7 @@
         </section>
 
 
+
         <!-- =====================================================
              SKILLS
         ====================================================== -->
@@ -1403,28 +1562,38 @@
 
             <div class="container">
 
+
                 <div class="section-header reveal">
 
                     <div class="section-label">
                         What I Do
                     </div>
 
+
                     <h2 class="section-title">
+
                         Skills that help me
+
                         <span class="gradient-text">
                             move forward.
                         </span>
+
                     </h2>
 
+
                     <p class="section-description">
+
                         A combination of technical knowledge, creativity,
                         communication and practical thinking.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="skills-grid">
+
 
                     <div class="skill-card reveal">
 
@@ -1432,14 +1601,19 @@
                             💻
                         </div>
 
-                        <h3>Web Technology</h3>
+                        <h3>
+                            Web Technology
+                        </h3>
 
                         <p>
+
                             Understanding of HTML, CSS, JavaScript and
                             modern web concepts.
+
                         </p>
 
                     </div>
+
 
 
                     <div class="skill-card reveal">
@@ -1448,14 +1622,19 @@
                             🧠
                         </div>
 
-                        <h3>Fast Learning</h3>
+                        <h3>
+                            Fast Learning
+                        </h3>
 
                         <p>
+
                             Comfortable learning new tools, technologies
                             and practical skills.
+
                         </p>
 
                     </div>
+
 
 
                     <div class="skill-card reveal">
@@ -1464,14 +1643,19 @@
                             💡
                         </div>
 
-                        <h3>Creative Thinking</h3>
+                        <h3>
+                            Creative Thinking
+                        </h3>
 
                         <p>
+
                             Enjoy creating new ideas and finding different
                             approaches to problems.
+
                         </p>
 
                     </div>
+
 
 
                     <div class="skill-card reveal">
@@ -1480,11 +1664,15 @@
                             📈
                         </div>
 
-                        <h3>Business Mindset</h3>
+                        <h3>
+                            Business Mindset
+                        </h3>
 
                         <p>
+
                             Interested in entrepreneurship, business
                             opportunities and growth.
+
                         </p>
 
                     </div>
@@ -1494,6 +1682,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
@@ -1504,98 +1693,128 @@
 
             <div class="container">
 
+
                 <div class="section-header reveal">
 
                     <div class="section-label">
                         My Journey
                     </div>
 
+
                     <h2 class="section-title">
+
                         Learning through
+
                         <span class="gradient-text">
                             experience.
                         </span>
+
                     </h2>
 
+
                     <p class="section-description">
+
                         Every stage of my journey has added a new skill,
                         perspective or lesson.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="timeline">
+
 
                     <div class="timeline-item reveal">
 
                         <span class="timeline-dot"></span>
+
 
                         <div class="timeline-date">
                             2024 — PRESENT
                         </div>
 
+
                         <h3>
                             Professional Development
                         </h3>
+
 
                         <h4>
                             Technology & Business
                         </h4>
 
+
                         <p>
+
                             Developing practical skills in technology,
                             digital tools, business concepts and
                             entrepreneurship.
+
                         </p>
 
                     </div>
 
 
+
                     <div class="timeline-item reveal">
 
                         <span class="timeline-dot"></span>
+
 
                         <div class="timeline-date">
                             2024
                         </div>
 
+
                         <h3>
                             Barista & Hospitality Training
                         </h3>
+
 
                         <h4>
                             Colombo Barista and Bartender School
                         </h4>
 
+
                         <p>
+
                             Completed professional training in barista
                             and hospitality-related skills.
+
                         </p>
 
                     </div>
+
 
 
                     <div class="timeline-item reveal">
 
                         <span class="timeline-dot"></span>
 
+
                         <div class="timeline-date">
                             2019 — 2020
                         </div>
+
 
                         <h3>
                             Secondary Education
                         </h3>
 
+
                         <h4>
                             St. Joseph Vaz College
                         </h4>
 
+
                         <p>
+
                             Completed secondary education while developing
                             strong foundations in science, mathematics,
                             English and other subjects.
+
                         </p>
 
                     </div>
@@ -1607,6 +1826,7 @@
         </section>
 
 
+
         <!-- =====================================================
              PROJECTS
         ====================================================== -->
@@ -1615,28 +1835,37 @@
 
             <div class="container">
 
+
                 <div class="section-header reveal">
 
                     <div class="section-label">
                         Selected Work
                     </div>
 
+
                     <h2 class="section-title">
+
                         Things I've
+
                         <span class="gradient-text">
                             created.
                         </span>
+
                     </h2>
 
+
                     <p class="section-description">
+
                         A selection of personal projects and ideas.
-                        Replace these examples with your real projects.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="projects-grid">
+
 
                     <article class="project-card reveal">
 
@@ -1650,28 +1879,42 @@
 
                         </div>
 
+
                         <div class="project-content">
 
                             <h3>
                                 Modern Portfolio
                             </h3>
 
+
                             <p>
+
                                 A responsive personal portfolio designed
                                 with a clean, modern interface.
+
                             </p>
+
 
                             <div class="tags">
 
-                                <span class="tag">HTML</span>
-                                <span class="tag">CSS</span>
-                                <span class="tag">JavaScript</span>
+                                <span class="tag">
+                                    HTML
+                                </span>
+
+                                <span class="tag">
+                                    CSS
+                                </span>
+
+                                <span class="tag">
+                                    JavaScript
+                                </span>
 
                             </div>
 
                         </div>
 
                     </article>
+
 
 
                     <article class="project-card reveal">
@@ -1686,28 +1929,42 @@
 
                         </div>
 
+
                         <div class="project-content">
 
                             <h3>
                                 Business Concept
                             </h3>
 
+
                             <p>
+
                                 A business-focused project exploring
                                 branding, customer experience and growth.
+
                             </p>
+
 
                             <div class="tags">
 
-                                <span class="tag">Business</span>
-                                <span class="tag">Strategy</span>
-                                <span class="tag">Branding</span>
+                                <span class="tag">
+                                    Business
+                                </span>
+
+                                <span class="tag">
+                                    Strategy
+                                </span>
+
+                                <span class="tag">
+                                    Branding
+                                </span>
 
                             </div>
 
                         </div>
 
                     </article>
+
 
 
                     <article class="project-card reveal">
@@ -1722,22 +1979,35 @@
 
                         </div>
 
+
                         <div class="project-content">
 
                             <h3>
                                 Creative Project
                             </h3>
 
+
                             <p>
+
                                 A creative digital concept focused on
                                 design, presentation and user experience.
+
                             </p>
+
 
                             <div class="tags">
 
-                                <span class="tag">Design</span>
-                                <span class="tag">Creative</span>
-                                <span class="tag">UX</span>
+                                <span class="tag">
+                                    Design
+                                </span>
+
+                                <span class="tag">
+                                    Creative
+                                </span>
+
+                                <span class="tag">
+                                    UX
+                                </span>
 
                             </div>
 
@@ -1750,6 +2020,7 @@
             </div>
 
         </section>
+
 
 
         <!-- =====================================================
@@ -1766,18 +2037,26 @@
                         Have an idea?
                     </div>
 
+
                     <h2>
+
                         Let's build something
+
                         <span class="gradient-text">
                             meaningful.
                         </span>
+
                     </h2>
 
+
                     <p>
+
                         Whether it's a project, business idea or
                         collaboration, I'm always interested in hearing
                         about new opportunities.
+
                     </p>
+
 
                     <a href="#contact" class="btn btn-primary">
                         Start a Conversation →
@@ -1790,6 +2069,7 @@
         </section>
 
 
+
         <!-- =====================================================
              CONTACT
         ====================================================== -->
@@ -1798,34 +2078,46 @@
 
             <div class="container">
 
+
                 <div class="section-header reveal">
 
                     <div class="section-label">
                         Contact
                     </div>
 
+
                     <h2 class="section-title">
                         Let's talk.
                     </h2>
 
+
                     <p class="section-description">
+
                         Have a question, project or opportunity?
-                        Send me a message.
+                        Feel free to contact me.
+
                     </p>
 
                 </div>
 
 
+
                 <div class="contact-grid">
+
 
                     <div class="contact-info reveal">
 
+
                         <div class="contact-card">
 
-                            <small>Email</small>
+                            <small>
+                                Email
+                            </small>
 
                             <strong>
-                                your@email.com
+                                <a href="mailto:your@email.com">
+                                    your@email.com
+                                </a>
                             </strong>
 
                         </div>
@@ -1833,7 +2125,9 @@
 
                         <div class="contact-card">
 
-                            <small>Phone</small>
+                            <small>
+                                Phone
+                            </small>
 
                             <strong>
                                 +94 XX XXX XXXX
@@ -1844,7 +2138,9 @@
 
                         <div class="contact-card">
 
-                            <small>Location</small>
+                            <small>
+                                Location
+                            </small>
 
                             <strong>
                                 Sri Lanka
@@ -1852,94 +2148,36 @@
 
                         </div>
 
+
                     </div>
 
 
-                    <form class="contact-form reveal" id="contactForm">
 
-                        <div class="form-row">
+                    <div class="contact-message reveal">
 
-                            <div class="input-group">
-
-                                <label for="name">
-                                    Your Name
-                                </label>
-
-                                <input
-                                    type="text"
-                                    id="name"
-                                    placeholder="Enter your name"
-                                    required
-                                >
-
-                            </div>
+                        <h3>
+                            Interested in working together?
+                        </h3>
 
 
-                            <div class="input-group">
+                        <p>
 
-                                <label for="email">
-                                    Your Email
-                                </label>
+                            I'm always open to new opportunities,
+                            collaborations, creative projects and
+                            interesting ideas.
 
-                                <input
-                                    type="email"
-                                    id="email"
-                                    placeholder="Enter your email"
-                                    required
-                                >
-
-                            </div>
-
-                        </div>
+                        </p>
 
 
-                        <div class="input-group">
-
-                            <label for="subject">
-                                Subject
-                            </label>
-
-                            <input
-                                type="text"
-                                id="subject"
-                                placeholder="What is this about?"
-                                required
-                            >
-
-                        </div>
-
-
-                        <div class="input-group">
-
-                            <label for="message">
-                                Message
-                            </label>
-
-                            <textarea
-                                id="message"
-                                placeholder="Write your message..."
-                                required
-                            ></textarea>
-
-                        </div>
-
-
-                        <button
-                            type="submit"
+                        <a
+                            href="mailto:your@email.com"
                             class="btn btn-primary"
                         >
-                            Send Message →
-                        </button>
+                            Email Me →
+                        </a>
 
+                    </div>
 
-                        <div
-                            class="form-message"
-                            id="formMessage"
-                        >
-                            ✓ Thanks! Your message has been prepared.
-                        </div>
-
-                    </form>
 
                 </div>
 
@@ -1950,6 +2188,7 @@
     </main>
 
 
+
     <!-- =========================================================
          FOOTER
     ========================================================== -->
@@ -1958,14 +2197,18 @@
 
         <div class="container footer-content">
 
+
             <p>
-                © <span id="year"></span> Imalka Fernando.
+
+                © <span id="year"></span>
+                Dasun Udayanga.
                 All rights reserved.
+
             </p>
+
 
             <div class="socials">
 
-                <!-- Replace # with your real social media links -->
 
                 <a
                     href="#"
@@ -1975,6 +2218,7 @@
                     FB
                 </a>
 
+
                 <a
                     href="#"
                     class="social"
@@ -1982,6 +2226,7 @@
                 >
                     IG
                 </a>
+
 
                 <a
                     href="#"
@@ -1991,6 +2236,7 @@
                     IN
                 </a>
 
+
                 <a
                     href="#"
                     class="social"
@@ -1999,11 +2245,13 @@
                     GH
                 </a>
 
+
             </div>
 
         </div>
 
     </footer>
+
 
 
     <!-- =========================================================
@@ -2012,21 +2260,31 @@
 
     <script>
 
+
         /* =========================================================
            MOBILE MENU
         ========================================================== */
 
-        const menuBtn = document.getElementById("menuBtn");
-        const navLinks = document.getElementById("navLinks");
+        const menuBtn =
+            document.getElementById("menuBtn");
+
+        const navLinks =
+            document.getElementById("navLinks");
+
 
         menuBtn.addEventListener("click", () => {
 
             navLinks.classList.toggle("open");
 
+
             if (navLinks.classList.contains("open")) {
+
                 menuBtn.textContent = "✕";
+
             } else {
+
                 menuBtn.textContent = "☰";
+
             }
 
         });
@@ -2039,6 +2297,7 @@
             link.addEventListener("click", () => {
 
                 navLinks.classList.remove("open");
+
                 menuBtn.textContent = "☰";
 
             });
@@ -2046,105 +2305,93 @@
         });
 
 
+
         /* =========================================================
            HEADER SCROLL EFFECT
         ========================================================== */
 
-        const header = document.getElementById("header");
+        const header =
+            document.getElementById("header");
+
 
         window.addEventListener("scroll", () => {
 
             if (window.scrollY > 50) {
+
                 header.classList.add("scrolled");
+
             } else {
+
                 header.classList.remove("scrolled");
+
             }
 
         });
+
 
 
         /* =========================================================
            ACTIVE NAVIGATION
         ========================================================== */
 
-        const sections = document.querySelectorAll("section[id]");
-        const navItems = document.querySelectorAll(".nav-link");
+        const sections =
+            document.querySelectorAll("section[id]");
+
+        const navItems =
+            document.querySelectorAll(".nav-link");
+
 
         function updateActiveNav() {
 
             let currentSection = "";
 
+
             sections.forEach(section => {
 
-                const sectionTop = section.offsetTop - 180;
-                const sectionHeight = section.offsetHeight;
+                const sectionTop =
+                    section.offsetTop - 180;
+
+                const sectionHeight =
+                    section.offsetHeight;
+
 
                 if (
                     window.scrollY >= sectionTop &&
                     window.scrollY < sectionTop + sectionHeight
                 ) {
-                    currentSection = section.getAttribute("id");
+
+                    currentSection =
+                        section.getAttribute("id");
+
                 }
 
             });
+
 
             navItems.forEach(link => {
 
                 link.classList.remove("active");
 
+
                 if (
-                    link.getAttribute("href") === "#" + currentSection
+                    link.getAttribute("href") ===
+                    "#" + currentSection
                 ) {
+
                     link.classList.add("active");
+
                 }
 
             });
 
         }
 
-        window.addEventListener("scroll", updateActiveNav);
 
+        window.addEventListener(
+            "scroll",
+            updateActiveNav
+        );
 
-        /* =========================================================
-           DARK / LIGHT MODE
-        ========================================================== */
-
-        const themeToggle =
-            document.getElementById("themeToggle");
-
-        const savedTheme =
-            localStorage.getItem("portfolio-theme");
-
-        if (savedTheme === "light") {
-            document.body.classList.add("light");
-            themeToggle.textContent = "☾";
-        }
-
-        themeToggle.addEventListener("click", () => {
-
-            document.body.classList.toggle("light");
-
-            if (document.body.classList.contains("light")) {
-
-                localStorage.setItem(
-                    "portfolio-theme",
-                    "light"
-                );
-
-                themeToggle.textContent = "☾";
-
-            } else {
-
-                localStorage.setItem(
-                    "portfolio-theme",
-                    "dark"
-                );
-
-                themeToggle.textContent = "☀";
-
-            }
-
-        });
 
 
         /* =========================================================
@@ -2154,57 +2401,41 @@
         const revealElements =
             document.querySelectorAll(".reveal");
 
-        const observer = new IntersectionObserver(
-            (entries) => {
 
-                entries.forEach(entry => {
+        const observer =
+            new IntersectionObserver(
 
-                    if (entry.isIntersecting) {
+                (entries) => {
 
-                        entry.target.classList.add("show");
+                    entries.forEach(entry => {
 
-                        observer.unobserve(entry.target);
+                        if (entry.isIntersecting) {
 
-                    }
+                            entry.target.classList.add("show");
 
-                });
+                            observer.unobserve(
+                                entry.target
+                            );
 
-            },
-            {
-                threshold: 0.12
-            }
-        );
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
 
         revealElements.forEach(element => {
+
             observer.observe(element);
-        });
-
-
-        /* =========================================================
-           CONTACT FORM
-        ========================================================== */
-
-        const contactForm =
-            document.getElementById("contactForm");
-
-        const formMessage =
-            document.getElementById("formMessage");
-
-        contactForm.addEventListener("submit", (event) => {
-
-            event.preventDefault();
-
-            formMessage.style.display = "block";
-
-            contactForm.reset();
-
-            setTimeout(() => {
-
-                formMessage.style.display = "none";
-
-            }, 5000);
 
         });
+
 
 
         /* =========================================================
@@ -2215,17 +2446,8 @@
             new Date().getFullYear();
 
 
-        /* =========================================================
-           SMOOTH PAGE LOAD
-        ========================================================== */
-
-        window.addEventListener("load", () => {
-
-            document.body.style.opacity = "1";
-
-        });
-
     </script>
-]
+
 </body>
+
 </html>
