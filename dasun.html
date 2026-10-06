@@ -1,173 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dasun Udayanga | Portfolio</title>
+    <title>Dasun Udayanga | Warehouse Professional</title>
 
     <meta name="description"
-        content="Personal portfolio of Dasun Udayanga - creative, technology-focused and fast-learning professional.">
+          content="Professional portfolio of Dasun Udayanga, Junior Associate - Warehouse at Teejay Lanka PLC with over 5 years of experience in warehouse operations and inventory management.">
 
     <style>
-
-        /* =========================================================
-           RESET & GLOBAL
-        ========================================================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            scroll-behavior: smooth;
         }
 
-        html {
-            scroll-behavior: smooth;
+        :root {
+            --bg: #07111f;
+            --bg-light: #0d1b2d;
+            --card: #101f33;
+            --card-hover: #142942;
+            --primary: #3b82f6;
+            --primary-light: #60a5fa;
+            --accent: #38bdf8;
+            --text: #f8fafc;
+            --text-light: #cbd5e1;
+            --text-muted: #94a3b8;
+            --border: rgba(148, 163, 184, 0.15);
+            --shadow: 0 20px 50px rgba(0, 0, 0, 0.25);
         }
 
         body {
             font-family: Arial, Helvetica, sans-serif;
-            background: #07070c;
-            color: #ffffff;
-            line-height: 1.6;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
             overflow-x: hidden;
         }
 
         a {
-            color: inherit;
             text-decoration: none;
+            color: inherit;
         }
 
-        button,
-        input,
-        textarea {
-            font: inherit;
+        ul {
+            list-style: none;
         }
 
-        ::selection {
-            background: #8b5cf6;
-            color: white;
-        }
-
-
-        /* =========================================================
-           VARIABLES
-        ========================================================= */
-
-        :root {
-            --bg: #07070c;
-            --bg-secondary: #0e0e16;
-            --card: rgba(255, 255, 255, 0.055);
-            --card-hover: rgba(255, 255, 255, 0.09);
-            --text: #ffffff;
-            --text-secondary: #a7a7b5;
-            --primary: #8b5cf6;
-            --primary-light: #a78bfa;
-            --border: rgba(255, 255, 255, 0.1);
-            --shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
-        }
-
-
-        /* =========================================================
-           SCROLLBAR
-        ========================================================= */
-
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 20px;
-        }
-
-
-        /* =========================================================
-           BACKGROUND EFFECTS
-        ========================================================= */
-
-        .background {
+        /* Background */
+        .background-glow {
             position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: -2;
-            overflow: hidden;
-        }
-
-        .glow {
-            position: absolute;
-            width: 500px;
-            height: 500px;
+            width: 450px;
+            height: 450px;
             border-radius: 50%;
-            filter: blur(120px);
-            opacity: 0.16;
+            background: rgba(37, 99, 235, 0.12);
+            filter: blur(100px);
+            z-index: -1;
+            pointer-events: none;
         }
 
-        .glow.one {
-            background: #7c3aed;
-            top: -180px;
+        .glow-1 {
+            top: 50px;
             left: -150px;
         }
 
-        .glow.two {
-            background: #2563eb;
-            right: -200px;
-            top: 35%;
+        .glow-2 {
+            right: -150px;
+            top: 500px;
+            background: rgba(14, 165, 233, 0.08);
         }
 
-        .glow.three {
-            background: #ec4899;
-            bottom: -250px;
-            left: 30%;
-        }
-
-
-        /* =========================================================
-           CONTAINER
-        ========================================================= */
-
-        .container {
-            width: min(1150px, 90%);
-            margin: auto;
-        }
-
-
-        /* =========================================================
-           HEADER
-        ========================================================= */
-
+        /* Header */
         header {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             z-index: 1000;
-            padding: 20px 0;
-            transition: 0.3s ease;
-        }
-
-        header.scrolled {
-            padding: 12px 0;
-            background: rgba(7, 7, 12, 0.75);
-            backdrop-filter: blur(20px);
+            padding: 18px 6%;
+            background: rgba(7, 17, 31, 0.88);
+            backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
         }
 
-        .nav {
+        nav {
+            max-width: 1200px;
+            margin: auto;
             display: flex;
-            align-items: center;
             justify-content: space-between;
+            align-items: center;
         }
 
         .logo {
-            font-size: 1.35rem;
+            font-size: 1.5rem;
             font-weight: 800;
-            letter-spacing: -0.5px;
+            color: var(--text);
         }
 
         .logo span {
@@ -176,277 +105,178 @@
 
         .nav-links {
             display: flex;
-            align-items: center;
-            gap: 32px;
-            list-style: none;
+            gap: 30px;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
-            font-size: 0.92rem;
-            transition: 0.25s ease;
+            color: var(--text-light);
+            font-size: 0.95rem;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover,
-        .nav-links a.active {
-            color: var(--text);
-        }
-
-        .nav-actions {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+        .nav-links a:hover {
+            color: var(--primary-light);
         }
 
         .menu-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 10px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            color: var(--text);
-            cursor: pointer;
             display: none;
-            place-items: center;
-            transition: 0.25s ease;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: white;
         }
 
-        .menu-btn:hover {
-            background: var(--card-hover);
-            transform: translateY(-2px);
+        /* General */
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 25px;
         }
 
+        section {
+            padding: 100px 0;
+        }
 
-        /* =========================================================
-           BUTTONS
-        ========================================================= */
+        .section-title {
+            margin-bottom: 50px;
+        }
 
-        .btn {
+        .section-title span {
+            color: var(--primary-light);
+            font-size: 0.85rem;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            margin-top: 8px;
+        }
+
+        .section-title p {
+            color: var(--text-muted);
+            max-width: 650px;
+            margin-top: 12px;
+        }
+
+        /* Hero */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 120px;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.15fr 0.85fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .availability {
             display: inline-flex;
             align-items: center;
-            justify-content: center;
-            gap: 10px;
+            gap: 9px;
+            padding: 8px 15px;
+            border: 1px solid rgba(96, 165, 250, 0.3);
+            border-radius: 30px;
+            background: rgba(59, 130, 246, 0.08);
+            color: var(--primary-light);
+            font-size: 0.85rem;
+            margin-bottom: 25px;
+        }
+
+        .availability-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #22c55e;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.8rem, 6vw, 5rem);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary-light);
+        }
+
+        .hero h3 {
+            font-size: 1.3rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            max-width: 650px;
+            font-size: 1.05rem;
+            margin-bottom: 35px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
             padding: 13px 22px;
-            border-radius: 12px;
-            border: 1px solid transparent;
+            border-radius: 10px;
             font-weight: 700;
-            cursor: pointer;
-            transition: 0.25s ease;
+            transition: 0.3s;
+            display: inline-block;
         }
 
         .btn-primary {
             background: var(--primary);
             color: white;
-            box-shadow: 0 10px 30px rgba(139, 92, 246, 0.25);
         }
 
         .btn-primary:hover {
             transform: translateY(-3px);
-            box-shadow: 0 15px 35px rgba(139, 92, 246, 0.4);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
         }
 
         .btn-secondary {
-            border-color: var(--border);
+            border: 1px solid var(--border);
             background: var(--card);
-            color: var(--text);
+            color: white;
         }
 
         .btn-secondary:hover {
-            transform: translateY(-3px);
             background: var(--card-hover);
+            transform: translateY(-3px);
         }
 
-
-        /* =========================================================
-           HERO
-        ========================================================= */
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 130px 0 80px;
-            position: relative;
-        }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.1fr 0.9fr;
-            align-items: center;
-            gap: 70px;
-        }
-
-        .badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 8px 13px;
-            border-radius: 50px;
-            background: rgba(139, 92, 246, 0.1);
-            border: 1px solid rgba(139, 92, 246, 0.25);
-            color: var(--primary-light);
-            font-size: 0.82rem;
-            font-weight: 700;
-            margin-bottom: 25px;
-        }
-
-        .status-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #22c55e;
-            box-shadow: 0 0 12px #22c55e;
-        }
-
-        .hero h1 {
-            font-size: clamp(3rem, 7vw, 5.8rem);
-            line-height: 0.98;
-            letter-spacing: -4px;
-            margin-bottom: 25px;
-        }
-
-        .gradient-text {
-            background: linear-gradient(
-                120deg,
-                #ffffff,
-                #a78bfa,
-                #c084fc,
-                #ffffff
-            );
-            background-size: 200% auto;
-            color: transparent;
-            -webkit-background-clip: text;
-            background-clip: text;
-            animation: gradientMove 5s linear infinite;
-        }
-
-        @keyframes gradientMove {
-            to {
-                background-position: 200% center;
-            }
-        }
-
-        .hero-description {
-            max-width: 620px;
-            color: var(--text-secondary);
-            font-size: 1.08rem;
-            margin-bottom: 30px;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
-        }
-
-        .hero-info {
-            margin-top: 35px;
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-        }
-
-        .info-item strong {
-            display: block;
-            font-size: 1.15rem;
-        }
-
-        .info-item span {
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-        }
-
-
-        /* =========================================================
-           HERO PROFILE CARD
-        ========================================================= */
-
-        .hero-card {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
+        /* Profile */
         .profile-card {
-            width: 340px;
-            height: 430px;
-            border-radius: 30px;
-
-            background:
-                linear-gradient(
-                    145deg,
-                    rgba(139, 92, 246, 0.18),
-                    rgba(255, 255, 255, 0.03)
-                );
-
+            background: linear-gradient(
+                145deg,
+                rgba(30, 64, 175, 0.25),
+                rgba(15, 23, 42, 0.8)
+            );
             border: 1px solid var(--border);
-            box-shadow: var(--shadow);
-            position: relative;
-            overflow: hidden;
-            transform: rotate(3deg);
-            transition: 0.4s ease;
-        }
-
-        .profile-card:hover {
-            transform: rotate(0deg) translateY(-8px);
-        }
-
-        .profile-card::before {
-            content: "";
-            position: absolute;
-            width: 260px;
-            height: 260px;
-            background: var(--primary);
-            filter: blur(100px);
-            opacity: 0.3;
-            top: -100px;
-            right: -100px;
-        }
-
-        .profile-card-inner {
-            position: absolute;
-            inset: 20px;
-            border: 1px solid var(--border);
-            border-radius: 22px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-
+            border-radius: 25px;
+            padding: 35px;
             text-align: center;
-            padding: 20px;
+            box-shadow: var(--shadow);
         }
-
-
-        /* =========================================================
-           PROFILE IMAGE
-        ========================================================= */
 
         .profile-image {
-            width: 150px;
-            height: 150px;
-
-            border-radius: 50%;
-
+            width: 180px;
+            height: 180px;
             object-fit: cover;
-            object-position: center;
-
-            display: block;
-
-            margin-bottom: 25px;
-
-            border: 4px solid rgba(167, 139, 250, 0.5);
-
+            border-radius: 50%;
+            border: 5px solid rgba(96, 165, 250, 0.8);
             box-shadow:
-                0 0 0 8px rgba(139, 92, 246, 0.08),
-                0 20px 50px rgba(139, 92, 246, 0.35);
-
-            transition: 0.3s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
+                0 0 0 12px rgba(59, 130, 246, 0.08),
+                0 20px 50px rgba(0, 0, 0, 0.4);
+            margin-bottom: 25px;
         }
 
         .profile-card h3 {
@@ -455,1849 +285,1241 @@
         }
 
         .profile-card p {
-            color: var(--text-secondary);
+            color: var(--text-muted);
+        }
+
+        .profile-role {
+            color: var(--primary-light) !important;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .quick-info {
+            margin-top: 25px;
+            padding-top: 25px;
+            border-top: 1px solid var(--border);
+            text-align: left;
+        }
+
+        .quick-info div {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+            color: var(--text-light);
             font-size: 0.9rem;
         }
 
+        .quick-info strong {
+            color: white;
+        }
 
-        /* =========================================================
-           FLOATING CARDS
-        ========================================================= */
+        /* Stats */
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 45px;
+        }
 
-        .floating-card {
-            position: absolute;
-            padding: 13px 17px;
-            background: rgba(20, 20, 30, 0.8);
-            backdrop-filter: blur(15px);
+        .stat {
+            padding: 22px;
+            background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 14px;
-            box-shadow: var(--shadow);
-            font-size: 0.82rem;
+            border-radius: 15px;
         }
 
-        .floating-card.one {
-            left: -30px;
-            top: 70px;
-            animation: float 4s ease-in-out infinite;
-        }
-
-        .floating-card.two {
-            right: -25px;
-            bottom: 80px;
-            animation: float 5s ease-in-out infinite reverse;
-        }
-
-        @keyframes float {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-12px);
-            }
-        }
-
-
-        /* =========================================================
-           SECTIONS
-        ========================================================= */
-
-        section {
-            padding: 110px 0;
-            position: relative;
-        }
-
-        .section-header {
-            max-width: 650px;
-            margin-bottom: 55px;
-        }
-
-        .section-label {
+        .stat h3 {
             color: var(--primary-light);
-            font-size: 0.78rem;
-            font-weight: 800;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 12px;
+            font-size: 1.8rem;
         }
 
-        .section-title {
-            font-size: clamp(2.1rem, 5vw, 3.3rem);
-            line-height: 1.1;
-            letter-spacing: -1.5px;
-            margin-bottom: 18px;
+        .stat p {
+            margin: 0;
+            font-size: 0.85rem;
         }
 
-        .section-description {
-            color: var(--text-secondary);
-            font-size: 1rem;
-        }
-
-
-        /* =========================================================
-           ABOUT
-        ========================================================= */
-
+        /* About */
         .about-grid {
             display: grid;
-            grid-template-columns: 0.8fr 1.2fr;
-            gap: 70px;
-            align-items: center;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
         }
 
-        .about-visual {
-            min-height: 400px;
+        .info-card {
+            background: var(--card);
             border: 1px solid var(--border);
-            border-radius: 30px;
-
-            background:
-                linear-gradient(
-                    135deg,
-                    rgba(139, 92, 246, 0.14),
-                    rgba(255, 255, 255, 0.025)
-                );
-
-            display: grid;
-            place-items: center;
-
-            position: relative;
-            overflow: hidden;
+            border-radius: 18px;
+            padding: 30px;
+            transition: 0.3s;
         }
 
-        .about-visual::after {
-            content: "";
-            position: absolute;
-            width: 220px;
-            height: 220px;
-            border: 1px solid rgba(139, 92, 246, 0.35);
-            border-radius: 50%;
+        .info-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
         }
 
-        .about-number {
-            font-size: 8rem;
-            font-weight: 900;
-            color: rgba(139, 92, 246, 0.15);
-            position: absolute;
+        .info-card h3 {
+            margin-bottom: 15px;
+            font-size: 1.25rem;
         }
 
-        .about-symbol {
-            font-size: 5rem;
-            z-index: 1;
+        .info-card p {
+            color: var(--text-muted);
         }
 
-        .about-content p {
-            color: var(--text-secondary);
-            margin-bottom: 18px;
+        .info-list {
+            margin-top: 15px;
         }
 
-        .about-list {
-            list-style: none;
-            margin-top: 25px;
-            display: grid;
-            gap: 14px;
+        .info-list li {
+            margin-bottom: 12px;
+            color: var(--text-light);
         }
 
-        .about-list li {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .check {
-            width: 25px;
-            height: 25px;
-            border-radius: 50%;
-            display: grid;
-            place-items: center;
-            background: rgba(139, 92, 246, 0.14);
+        .info-list li::before {
+            content: "✓";
             color: var(--primary-light);
-            font-size: 0.75rem;
+            font-weight: bold;
+            margin-right: 10px;
         }
 
+        /* Experience */
+        .experience-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: 35px;
+            box-shadow: var(--shadow);
+        }
 
-        /* =========================================================
-           SKILLS
-        ========================================================= */
+        .experience-top {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
 
+        .experience-top h3 {
+            font-size: 1.5rem;
+        }
+
+        .experience-top .role {
+            color: var(--primary-light);
+            font-weight: 600;
+            margin-top: 5px;
+        }
+
+        .experience-date {
+            color: var(--text-muted);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 7px 14px;
+            border-radius: 20px;
+            height: fit-content;
+            white-space: nowrap;
+        }
+
+        .company {
+            color: var(--accent);
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .experience-list {
+            margin-top: 25px;
+        }
+
+        .experience-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .experience-list li::before {
+            content: "▸";
+            position: absolute;
+            left: 0;
+            color: var(--primary-light);
+            font-weight: bold;
+        }
+
+        /* Workplace */
+        .workplace {
+            margin-top: 30px;
+            padding: 30px;
+            border-radius: 18px;
+            background: linear-gradient(
+                135deg,
+                rgba(30, 64, 175, 0.18),
+                rgba(14, 165, 233, 0.08)
+            );
+            border: 1px solid rgba(96, 165, 250, 0.18);
+        }
+
+        .workplace h3 {
+            margin-bottom: 12px;
+            color: white;
+        }
+
+        .workplace p {
+            color: var(--text-light);
+            margin-bottom: 7px;
+        }
+
+        .workplace strong {
+            color: var(--primary-light);
+        }
+
+        /* Skills */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 18px;
+            gap: 20px;
         }
 
         .skill-card {
-            padding: 30px 25px;
-            border: 1px solid var(--border);
             background: var(--card);
-            border-radius: 20px;
-            transition: 0.3s ease;
+            border: 1px solid var(--border);
+            padding: 28px 22px;
+            border-radius: 18px;
+            transition: 0.3s;
         }
 
         .skill-card:hover {
             transform: translateY(-7px);
             background: var(--card-hover);
-            border-color: rgba(139, 92, 246, 0.4);
         }
 
         .skill-icon {
-            width: 52px;
-            height: 52px;
-            border-radius: 14px;
-            background: rgba(139, 92, 246, 0.12);
-            display: grid;
-            place-items: center;
-            font-size: 1.4rem;
-            margin-bottom: 20px;
-        }
-
-        .skill-card h3 {
-            margin-bottom: 9px;
-        }
-
-        .skill-card p {
-            color: var(--text-secondary);
-            font-size: 0.88rem;
-        }
-
-
-        /* =========================================================
-           EXPERIENCE
-        ========================================================= */
-
-        .timeline {
-            max-width: 850px;
-            position: relative;
-            margin: auto;
-        }
-
-        .timeline::before {
-            content: "";
-            position: absolute;
-            left: 9px;
-            top: 0;
-            bottom: 0;
-            width: 1px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding-left: 45px;
-            padding-bottom: 50px;
-        }
-
-        .timeline-item:last-child {
-            padding-bottom: 0;
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 0;
-            top: 4px;
-            width: 19px;
-            height: 19px;
-            border-radius: 50%;
-            background: var(--bg);
-            border: 4px solid var(--primary);
-            box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
-        }
-
-        .timeline-date {
-            color: var(--primary-light);
-            font-size: 0.8rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-
-        .timeline-item h3 {
-            font-size: 1.35rem;
-            margin-bottom: 4px;
-        }
-
-        .timeline-item h4 {
-            color: var(--text-secondary);
-            font-weight: 500;
-            margin-bottom: 12px;
-        }
-
-        .timeline-item p {
-            color: var(--text-secondary);
-        }
-
-
-        /* =========================================================
-           PROJECTS
-        ========================================================= */
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
-        }
-
-        .project-card {
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 22px;
-            overflow: hidden;
-            transition: 0.35s ease;
-        }
-
-        .project-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(139, 92, 246, 0.4);
-            box-shadow: var(--shadow);
-        }
-
-        .project-image {
-            height: 210px;
-            position: relative;
-            overflow: hidden;
-
-            background:
-                radial-gradient(
-                    circle at 20% 30%,
-                    rgba(139, 92, 246, 0.5),
-                    transparent 30%
-                ),
-                radial-gradient(
-                    circle at 80% 70%,
-                    rgba(59, 130, 246, 0.35),
-                    transparent 30%
-                ),
-                #11111b;
-        }
-
-        .project-image::after {
-            content: "";
-            position: absolute;
-            inset: 20px;
-            border: 1px solid rgba(255,255,255,0.12);
-            border-radius: 14px;
-        }
-
-        .project-number {
-            position: absolute;
-            left: 22px;
-            top: 18px;
-            font-size: 0.75rem;
-            font-weight: 800;
-            color: rgba(255,255,255,0.7);
-            z-index: 1;
-        }
-
-        .project-shape {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 25px;
-            background: rgba(255,255,255,0.08);
-            transform: rotate(25deg);
-            right: 50px;
-            top: 50px;
-        }
-
-        .project-content {
-            padding: 25px;
-        }
-
-        .project-content h3 {
-            margin-bottom: 10px;
-        }
-
-        .project-content p {
-            color: var(--text-secondary);
-            font-size: 0.88rem;
+            font-size: 2rem;
             margin-bottom: 18px;
         }
 
-        .tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 7px;
+        .skill-card h3 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
         }
 
-        .tag {
-            padding: 5px 9px;
-            border-radius: 7px;
-            background: rgba(139, 92, 246, 0.1);
-            color: var(--primary-light);
-            font-size: 0.72rem;
-            font-weight: 700;
+        .skill-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
         }
 
-
-        /* =========================================================
-           CTA
-        ========================================================= */
-
-        .cta {
-            padding: 75px 50px;
-            border: 1px solid var(--border);
-            border-radius: 30px;
-            text-align: center;
-
-            background:
-                radial-gradient(
-                    circle at center,
-                    rgba(139, 92, 246, 0.15),
-                    transparent 65%
-                );
-
-            overflow: hidden;
-            position: relative;
-        }
-
-        .cta h2 {
-            font-size: clamp(2rem, 5vw, 3.4rem);
-            margin-bottom: 15px;
-        }
-
-        .cta p {
-            color: var(--text-secondary);
-            max-width: 600px;
-            margin: 0 auto 28px;
-        }
-
-
-        /* =========================================================
-           CONTACT
-        ========================================================= */
-
-        .contact-grid {
+        /* Education */
+        .education-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: repeat(2, 1fr);
             gap: 25px;
         }
 
-        .contact-info {
+        .education-card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            padding: 30px;
+            border-radius: 18px;
+            transition: 0.3s;
+        }
+
+        .education-card:hover {
+            transform: translateY(-5px);
+            background: var(--card-hover);
+        }
+
+        .education-year {
+            display: inline-block;
+            color: var(--primary-light);
+            background: rgba(59, 130, 246, 0.1);
+            padding: 6px 12px;
+            border-radius: 20px;
+            margin-bottom: 15px;
+            font-size: 0.85rem;
+        }
+
+        .education-card h3 {
+            margin-bottom: 7px;
+        }
+
+        .education-card h4 {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 10px;
+        }
+
+        .education-card p {
+            color: var(--text-muted);
+        }
+
+        /* Languages */
+        .language-box {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            max-width: 500px;
+        }
+
+        .language {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .language:last-child {
+            border-bottom: none;
+        }
+
+        .language span:last-child {
+            color: var(--primary-light);
+        }
+
+        /* Contact */
+        .contact-grid {
             display: grid;
-            gap: 15px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
         }
 
         .contact-card {
-            padding: 25px;
-            border: 1px solid var(--border);
             background: var(--card);
-            border-radius: 16px;
-            transition: 0.3s ease;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 30px;
+            text-align: center;
+            transition: 0.3s;
         }
 
         .contact-card:hover {
             transform: translateY(-5px);
             background: var(--card-hover);
-            border-color: rgba(139, 92, 246, 0.4);
         }
 
-        .contact-card small {
-            display: block;
-            color: var(--text-secondary);
-            margin-bottom: 7px;
+        .contact-icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
         }
 
-        .contact-card strong {
-            font-size: 1rem;
+        .contact-card h3 {
+            margin-bottom: 8px;
         }
 
-        .contact-card a {
+        .contact-card p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            word-break: break-word;
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 30px 20px;
+            text-align: center;
+            color: var(--text-muted);
+        }
+
+        footer strong {
             color: var(--primary-light);
         }
 
-        .contact-message {
-            padding: 35px;
-            border: 1px solid var(--border);
-            background: var(--card);
-            border-radius: 20px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .contact-message h3 {
-            font-size: 1.6rem;
-            margin-bottom: 12px;
-        }
-
-        .contact-message p {
-            color: var(--text-secondary);
-            margin-bottom: 25px;
-        }
-
-
-        /* =========================================================
-           FOOTER
-        ========================================================= */
-
-        footer {
-            border-top: 1px solid var(--border);
-            padding: 30px 0;
-        }
-
-        .footer-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 20px;
-        }
-
-        .footer-content p {
-            color: var(--text-secondary);
-            font-size: 0.82rem;
-        }
-
-        .socials {
-            display: flex;
-            gap: 10px;
-        }
-
-        .social {
-            width: 38px;
-            height: 38px;
-            border-radius: 10px;
-            display: grid;
-            place-items: center;
-            border: 1px solid var(--border);
-            color: var(--text-secondary);
-            transition: 0.25s ease;
-            font-size: 0.8rem;
-            font-weight: 700;
-        }
-
-        .social:hover {
-            color: white;
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-3px);
-        }
-
-
-        /* =========================================================
-           SCROLL REVEAL
-        ========================================================= */
-
+        /* Reveal */
         .reveal {
             opacity: 0;
             transform: translateY(30px);
-            transition:
-                opacity 0.7s ease,
-                transform 0.7s ease;
+            transition: all 0.8s ease;
         }
 
-        .reveal.show {
+        .reveal.active {
             opacity: 1;
             transform: translateY(0);
         }
 
-
-        /* =========================================================
-           RESPONSIVE
-        ========================================================= */
-
+        /* Responsive */
         @media (max-width: 950px) {
 
-            .hero-grid,
-            .about-grid {
+            .hero-content {
                 grid-template-columns: 1fr;
             }
 
-            .hero {
-                text-align: center;
-            }
-
-            .hero-description {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons,
-            .hero-info {
-                justify-content: center;
-            }
-
-            .hero-card {
-                margin-top: 30px;
+            .profile-card {
+                max-width: 500px;
+                margin: auto;
             }
 
             .skills-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .projects-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
             .contact-grid {
                 grid-template-columns: 1fr;
             }
-
-            .about-visual {
-                min-height: 300px;
-            }
         }
 
-
-        @media (max-width: 700px) {
+        @media (max-width: 750px) {
 
             header {
-                padding: 15px 0;
+                padding: 15px 20px;
+            }
+
+            .menu-btn {
+                display: block;
             }
 
             .nav-links {
                 position: absolute;
-                top: 75px;
-                left: 5%;
-                width: 90%;
-                padding: 20px;
-
-                background: rgba(14, 14, 22, 0.96);
-                backdrop-filter: blur(20px);
-
-                border: 1px solid var(--border);
-                border-radius: 18px;
-
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: rgba(7, 17, 31, 0.98);
                 flex-direction: column;
-                align-items: flex-start;
-                gap: 18px;
-
-                opacity: 0;
-                visibility: hidden;
-                transform: translateY(-10px);
-
-                transition: 0.25s ease;
+                padding: 25px;
+                gap: 20px;
+                display: none;
+                border-bottom: 1px solid var(--border);
             }
 
-            .nav-links.open {
-                opacity: 1;
-                visibility: visible;
-                transform: translateY(0);
+            .nav-links.active {
+                display: flex;
             }
 
-            .menu-btn {
-                display: grid;
+            section {
+                padding: 75px 0;
             }
 
             .hero {
                 padding-top: 120px;
             }
 
-            .hero h1 {
-                font-size: 3.2rem;
-                letter-spacing: -2.5px;
-            }
-
-            .profile-card {
-                width: 290px;
-                height: 380px;
-            }
-
-            .profile-image {
-                width: 125px;
-                height: 125px;
-            }
-
-            .floating-card.one {
-                left: 0;
-            }
-
-            .floating-card.two {
-                right: 0;
-            }
-
-            .skills-grid,
-            .projects-grid {
+            .about-grid,
+            .education-grid {
                 grid-template-columns: 1fr;
             }
 
-            section {
-                padding: 80px 0;
+            .stats {
+                grid-template-columns: 1fr;
             }
 
-            .cta {
-                padding: 55px 25px;
-            }
-
-            .footer-content {
-                flex-direction: column;
-                text-align: center;
-            }
-        }
-
-
-        @media (max-width: 450px) {
-
-            .container {
-                width: 92%;
+            .skills-grid {
+                grid-template-columns: 1fr;
             }
 
             .hero h1 {
                 font-size: 2.7rem;
             }
 
-            .btn {
-                width: 100%;
-            }
-
-            .hero-buttons {
-                width: 100%;
-            }
-
-            .hero-info {
-                gap: 20px;
-            }
-
-            .profile-card {
-                width: 275px;
-                height: 365px;
-            }
-
-            .floating-card {
-                font-size: 0.72rem;
-                padding: 10px 12px;
+            .section-title h2 {
+                font-size: 2rem;
             }
         }
 
+        @media (max-width: 500px) {
+
+            .container {
+                padding: 0 18px;
+            }
+
+            .profile-card {
+                padding: 25px 18px;
+            }
+
+            .profile-image {
+                width: 145px;
+                height: 145px;
+            }
+
+            .experience-card {
+                padding: 25px 20px;
+            }
+
+            .buttons {
+                flex-direction: column;
+            }
+
+            .btn {
+                text-align: center;
+                width: 100%;
+            }
+        }
     </style>
 </head>
 
-
 <body>
 
+    <div class="background-glow glow-1"></div>
+    <div class="background-glow glow-2"></div>
 
-    <!-- =========================================================
-         BACKGROUND
-    ========================================================== -->
-
-    <div class="background">
-
-        <div class="glow one"></div>
-        <div class="glow two"></div>
-        <div class="glow three"></div>
-
-    </div>
-
-
-
-    <!-- =========================================================
-         HEADER
-    ========================================================== -->
-
-    <header id="header">
-
-        <div class="container nav">
+    <!-- HEADER -->
+    <header>
+        <nav>
 
             <a href="#home" class="logo">
                 Dasun<span>.</span>
             </a>
 
+            <div class="menu-btn" id="menuBtn">
+                ☰
+            </div>
 
-            <nav>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Profile</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
 
-                <ul class="nav-links" id="navLinks">
+        </nav>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="hero" id="home">
+
+        <div class="container">
+
+            <div class="hero-content">
+
+                <div class="hero-text reveal">
+
+                    <div class="availability">
+                        <span class="availability-dot"></span>
+                        Experienced Warehouse Professional
+                    </div>
+
+                    <h1>
+                        Hello, I'm <span>Dasun Udayanga</span>
+                    </h1>
+
+                    <h3>
+                        Junior Associate – Warehouse
+                    </h3>
+
+                    <p>
+                        Reliable and detail-oriented warehouse professional
+                        with over 5 years of experience in inventory management,
+                        order fulfillment, receiving, storing and loading operations.
+                    </p>
+
+                    <div class="buttons">
+
+                        <a href="#experience" class="btn btn-primary">
+                            View Experience →
+                        </a>
+
+                        <a href="#contact" class="btn btn-secondary">
+                            Contact Me
+                        </a>
+
+                    </div>
+
+                    <div class="stats">
+
+                        <div class="stat">
+                            <h3>5+</h3>
+                            <p>Years of Experience</p>
+                        </div>
+
+                        <div class="stat">
+                            <h3>100%</h3>
+                            <p>Safety Focus</p>
+                        </div>
+
+                        <div class="stat">
+                            <h3>24/7</h3>
+                            <p>Commitment to Work</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PROFILE CARD -->
+                <div class="profile-card reveal">
+
+                    <!-- Put 27569.jpg in the same folder as this HTML file -->
+                    <img
+                        src="./27569.jpg"
+                        alt="Dasun Udayanga"
+                        class="profile-image"
+                    >
+
+                    <h3>Dasun Udayanga</h3>
+
+                    <p class="profile-role">
+                        Junior Associate – Warehouse
+                    </p>
+
+                    <p>
+                        Warehouse Operations • Inventory • Order Fulfillment
+                    </p>
+
+                    <div class="quick-info">
+
+                        <div>
+                            📧
+                            <span>
+                                <strong>Email:</strong><br>
+                                dasund640@gmail.com
+                            </span>
+                        </div>
+
+                        <div>
+                            📞
+                            <span>
+                                <strong>Phone:</strong><br>
+                                +94 71 055 5330
+                            </span>
+                        </div>
+
+                        <div>
+                            📍
+                            <span>
+                                <strong>Location:</strong><br>
+                                Mattamagoda, Kotiyakumbura
+                            </span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROFILE -->
+    <section id="about">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+                <span>Professional Profile</span>
+                <h2>About Me</h2>
+
+                <p>
+                    A reliable and detail-oriented warehouse professional
+                    with practical experience in warehouse operations,
+                    inventory handling and order fulfillment.
+                </p>
+            </div>
+
+
+            <div class="about-grid">
+
+                <div class="info-card reveal">
+
+                    <h3>Professional Summary</h3>
+
+                    <p>
+                        I am a reliable and detail-oriented Warehouse Assistant
+                        with over 5 years of experience in inventory management,
+                        order fulfillment and warehouse operations.
+                    </p>
+
+                    <ul class="info-list">
+
+                        <li>
+                            Experienced in organizing large-scale stock
+                        </li>
+
+                        <li>
+                            Experienced in improving workflow efficiency
+                        </li>
+
+                        <li>
+                            Strong focus on workplace safety
+                        </li>
+
+                        <li>
+                            Experienced in receiving, storing and loading
+                        </li>
+
+                        <li>
+                            Able to work effectively as part of a team
+                        </li>
+
+                    </ul>
+
+                </div>
+
+
+                <div class="info-card reveal">
+
+                    <h3>Current Position</h3>
+
+                    <p>
+                        Currently working as a
+                        <strong>Junior Associate – Warehouse</strong>
+                        at Teejay Lanka PLC.
+                    </p>
+
+                    <ul class="info-list">
+
+                        <li>
+                            Receiving and storing inventory
+                        </li>
+
+                        <li>
+                            Stock counting and verification
+                        </li>
+
+                        <li>
+                            Preparing outbound packages
+                        </li>
+
+                        <li>
+                            Loading delivery vehicles
+                        </li>
+
+                        <li>
+                            Maintaining organized warehouse operations
+                        </li>
+
+                    </ul>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EXPERIENCE -->
+    <section id="experience">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+
+                <span>Career</span>
+
+                <h2>Work Experience</h2>
+
+                <p>
+                    Professional experience in warehouse operations,
+                    inventory handling and logistics support.
+                </p>
+
+            </div>
+
+
+            <div class="experience-card reveal">
+
+                <div class="experience-top">
+
+                    <div>
+
+                        <h3>Junior Associate – Warehouse</h3>
+
+                        <div class="role">
+                            Warehouse Operations
+                        </div>
+
+                        <div class="company">
+                            Teejay Lanka PLC
+                        </div>
+
+                    </div>
+
+                    <div class="experience-date">
+                        2020 – Present
+                    </div>
+
+                </div>
+
+
+                <p style="color: var(--text-muted);">
+                    Over 5 years of practical experience in warehouse
+                    operations, inventory management and order fulfillment.
+                </p>
+
+
+                <ul class="experience-list">
 
                     <li>
-                        <a href="#home" class="nav-link active">
-                            Home
-                        </a>
+                        <strong>Receiving &amp; Storing:</strong>
+                        Unloading delivery vehicles, inspecting inventory
+                        for damages, labeling items and storing stock in
+                        logical, designated locations to optimize available space.
                     </li>
 
                     <li>
-                        <a href="#about" class="nav-link">
-                            About
-                        </a>
+                        <strong>Stock Counts:</strong>
+                        Assisting with cycle counts and regular physical
+                        inventory verification to maintain accurate system data.
                     </li>
 
                     <li>
-                        <a href="#skills" class="nav-link">
-                            Skills
-                        </a>
+                        <strong>Loading:</strong>
+                        Staging and loading outbound packages onto delivery
+                        vehicles securely and according to schedule.
                     </li>
 
                     <li>
-                        <a href="#experience" class="nav-link">
-                            Experience
-                        </a>
+                        <strong>Inventory Management:</strong>
+                        Organizing stock efficiently and supporting smooth
+                        warehouse workflow.
                     </li>
 
                     <li>
-                        <a href="#projects" class="nav-link">
-                            Projects
-                        </a>
+                        <strong>Order Fulfillment:</strong>
+                        Supporting the preparation and movement of products
+                        required for outbound deliveries.
                     </li>
 
                     <li>
-                        <a href="#contact" class="nav-link">
-                            Contact
-                        </a>
+                        <strong>Safety:</strong>
+                        Maintaining a strong focus on safe warehouse
+                        practices and workplace safety requirements.
                     </li>
 
                 </ul>
 
-            </nav>
 
+                <!-- WORKPLACE -->
+                <div class="workplace">
 
-            <div class="nav-actions">
-
-                <button class="menu-btn" id="menuBtn">
-                    ☰
-                </button>
-
-            </div>
-
-        </div>
-
-    </header>
-
-
-
-    <main>
-
-
-        <!-- =====================================================
-             HERO
-        ====================================================== -->
-
-        <section class="hero" id="home">
-
-            <div class="container hero-grid">
-
-
-                <div class="hero-content reveal">
-
-                    <div class="badge">
-
-                        <span class="status-dot"></span>
-
-                        Available for opportunities
-
-                    </div>
-
-
-                    <h1>
-
-                        Hi, I'm
-
-                        <span class="gradient-text">
-                            Dasun
-                        </span>
-
-                        <br>
-
-                        Udayanga
-
-                    </h1>
-
-
-                    <p class="hero-description">
-
-                        A fast-learning, tech-savvy professional who enjoys
-                        technology, creativity, business ideas and building
-                        meaningful digital experiences.
-
-                    </p>
-
-
-                    <div class="hero-buttons">
-
-                        <a href="#projects" class="btn btn-primary">
-                            View My Work →
-                        </a>
-
-                        <a href="#contact" class="btn btn-secondary">
-                            Let's Talk
-                        </a>
-
-                    </div>
-
-
-                    <div class="hero-info">
-
-                        <div class="info-item">
-
-                            <strong>01+</strong>
-
-                            <span>
-                                Years Learning
-                            </span>
-
-                        </div>
-
-
-                        <div class="info-item">
-
-                            <strong>10+</strong>
-
-                            <span>
-                                Skills & Interests
-                            </span>
-
-                        </div>
-
-
-                        <div class="info-item">
-
-                            <strong>∞</strong>
-
-                            <span>
-                                Ideas
-                            </span>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
-
-
-                <!-- =================================================
-                     PROFILE CARD
-                ================================================== -->
-
-                <div class="hero-card reveal">
-
-                    <div class="profile-card">
-
-                        <div class="profile-card-inner">
-
-
-                            <!-- YOUR PROFILE IMAGE -->
-
-                            <img
-                                src="./27569.jpg"
-                                alt="Dasun Udayanga"
-                                class="profile-image"
-                            >
-
-
-                            <h3>
-                                Dasun Udayanga
-                            </h3>
-
-
-                            <p>
-                                Tech • Creativity • Business
-                            </p>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="floating-card one">
-
-                        ⚡ Fast Learner
-
-                    </div>
-
-
-                    <div class="floating-card two">
-
-                        🚀 Always Building
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             ABOUT
-        ====================================================== -->
-
-        <section id="about">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-label">
-                        About Me
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        Curious mind.
-
-                        <br>
-
-                        <span class="gradient-text">
-                            Constant growth.
-                        </span>
-
-                    </h2>
-
-
-                    <p class="section-description">
-
-                        I believe the best way to grow is to stay curious,
-                        learn new things and actually put knowledge into
-                        practice.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="about-grid">
-
-
-                    <div class="about-visual reveal">
-
-                        <div class="about-number">
-                            01
-                        </div>
-
-                        <div class="about-symbol">
-                            ✦
-                        </div>
-
-                    </div>
-
-
-
-                    <div class="about-content reveal">
-
-                        <p>
-
-                            I'm someone who enjoys exploring different fields,
-                            especially technology, digital creativity,
-                            business and practical problem solving.
-
-                        </p>
-
-
-                        <p>
-
-                            My journey has taken me through education,
-                            hospitality, technology learning and business
-                            ideas. Each experience has taught me something
-                            valuable.
-
-                        </p>
-
-
-                        <p>
-
-                            I don't believe in staying limited to one skill.
-                            I enjoy learning, experimenting and finding better
-                            ways to do things.
-
-                        </p>
-
-
-                        <ul class="about-list">
-
-
-                            <li>
-
-                                <span class="check">
-                                    ✓
-                                </span>
-
-                                Fast learner and adaptable
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="check">
-                                    ✓
-                                </span>
-
-                                Interested in technology and digital work
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="check">
-                                    ✓
-                                </span>
-
-                                Entrepreneurial mindset
-
-                            </li>
-
-
-                            <li>
-
-                                <span class="check">
-                                    ✓
-                                </span>
-
-                                Always looking for new opportunities
-
-                            </li>
-
-
-                        </ul>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             SKILLS
-        ====================================================== -->
-
-        <section id="skills">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-label">
-                        What I Do
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        Skills that help me
-
-                        <span class="gradient-text">
-                            move forward.
-                        </span>
-
-                    </h2>
-
-
-                    <p class="section-description">
-
-                        A combination of technical knowledge, creativity,
-                        communication and practical thinking.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="skills-grid">
-
-
-                    <div class="skill-card reveal">
-
-                        <div class="skill-icon">
-                            💻
-                        </div>
-
-                        <h3>
-                            Web Technology
-                        </h3>
-
-                        <p>
-
-                            Understanding of HTML, CSS, JavaScript and
-                            modern web concepts.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="skill-card reveal">
-
-                        <div class="skill-icon">
-                            🧠
-                        </div>
-
-                        <h3>
-                            Fast Learning
-                        </h3>
-
-                        <p>
-
-                            Comfortable learning new tools, technologies
-                            and practical skills.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="skill-card reveal">
-
-                        <div class="skill-icon">
-                            💡
-                        </div>
-
-                        <h3>
-                            Creative Thinking
-                        </h3>
-
-                        <p>
-
-                            Enjoy creating new ideas and finding different
-                            approaches to problems.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="skill-card reveal">
-
-                        <div class="skill-icon">
-                            📈
-                        </div>
-
-                        <h3>
-                            Business Mindset
-                        </h3>
-
-                        <p>
-
-                            Interested in entrepreneurship, business
-                            opportunities and growth.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             EXPERIENCE
-        ====================================================== -->
-
-        <section id="experience">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-label">
-                        My Journey
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        Learning through
-
-                        <span class="gradient-text">
-                            experience.
-                        </span>
-
-                    </h2>
-
-
-                    <p class="section-description">
-
-                        Every stage of my journey has added a new skill,
-                        perspective or lesson.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="timeline">
-
-
-                    <div class="timeline-item reveal">
-
-                        <span class="timeline-dot"></span>
-
-
-                        <div class="timeline-date">
-                            2024 — PRESENT
-                        </div>
-
-
-                        <h3>
-                            Professional Development
-                        </h3>
-
-
-                        <h4>
-                            Technology & Business
-                        </h4>
-
-
-                        <p>
-
-                            Developing practical skills in technology,
-                            digital tools, business concepts and
-                            entrepreneurship.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="timeline-item reveal">
-
-                        <span class="timeline-dot"></span>
-
-
-                        <div class="timeline-date">
-                            2024
-                        </div>
-
-
-                        <h3>
-                            Barista & Hospitality Training
-                        </h3>
-
-
-                        <h4>
-                            Colombo Barista and Bartender School
-                        </h4>
-
-
-                        <p>
-
-                            Completed professional training in barista
-                            and hospitality-related skills.
-
-                        </p>
-
-                    </div>
-
-
-
-                    <div class="timeline-item reveal">
-
-                        <span class="timeline-dot"></span>
-
-
-                        <div class="timeline-date">
-                            2019 — 2020
-                        </div>
-
-
-                        <h3>
-                            Secondary Education
-                        </h3>
-
-
-                        <h4>
-                            St. Joseph Vaz College
-                        </h4>
-
-
-                        <p>
-
-                            Completed secondary education while developing
-                            strong foundations in science, mathematics,
-                            English and other subjects.
-
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             PROJECTS
-        ====================================================== -->
-
-        <section id="projects">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-label">
-                        Selected Work
-                    </div>
-
-
-                    <h2 class="section-title">
-
-                        Things I've
-
-                        <span class="gradient-text">
-                            created.
-                        </span>
-
-                    </h2>
-
-
-                    <p class="section-description">
-
-                        A selection of personal projects and ideas.
-
-                    </p>
-
-                </div>
-
-
-
-                <div class="projects-grid">
-
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-
-                            <span class="project-number">
-                                PROJECT 01
-                            </span>
-
-                            <div class="project-shape"></div>
-
-                        </div>
-
-
-                        <div class="project-content">
-
-                            <h3>
-                                Modern Portfolio
-                            </h3>
-
-
-                            <p>
-
-                                A responsive personal portfolio designed
-                                with a clean, modern interface.
-
-                            </p>
-
-
-                            <div class="tags">
-
-                                <span class="tag">
-                                    HTML
-                                </span>
-
-                                <span class="tag">
-                                    CSS
-                                </span>
-
-                                <span class="tag">
-                                    JavaScript
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-
-                            <span class="project-number">
-                                PROJECT 02
-                            </span>
-
-                            <div class="project-shape"></div>
-
-                        </div>
-
-
-                        <div class="project-content">
-
-                            <h3>
-                                Business Concept
-                            </h3>
-
-
-                            <p>
-
-                                A business-focused project exploring
-                                branding, customer experience and growth.
-
-                            </p>
-
-
-                            <div class="tags">
-
-                                <span class="tag">
-                                    Business
-                                </span>
-
-                                <span class="tag">
-                                    Strategy
-                                </span>
-
-                                <span class="tag">
-                                    Branding
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-
-
-                    <article class="project-card reveal">
-
-                        <div class="project-image">
-
-                            <span class="project-number">
-                                PROJECT 03
-                            </span>
-
-                            <div class="project-shape"></div>
-
-                        </div>
-
-
-                        <div class="project-content">
-
-                            <h3>
-                                Creative Project
-                            </h3>
-
-
-                            <p>
-
-                                A creative digital concept focused on
-                                design, presentation and user experience.
-
-                            </p>
-
-
-                            <div class="tags">
-
-                                <span class="tag">
-                                    Design
-                                </span>
-
-                                <span class="tag">
-                                    Creative
-                                </span>
-
-                                <span class="tag">
-                                    UX
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                    </article>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CTA
-        ====================================================== -->
-
-        <section>
-
-            <div class="container">
-
-                <div class="cta reveal">
-
-                    <div class="section-label">
-                        Have an idea?
-                    </div>
-
-
-                    <h2>
-
-                        Let's build something
-
-                        <span class="gradient-text">
-                            meaningful.
-                        </span>
-
-                    </h2>
-
+                    <h3>📍 Workplace Information</h3>
 
                     <p>
-
-                        Whether it's a project, business idea or
-                        collaboration, I'm always interested in hearing
-                        about new opportunities.
-
+                        <strong>Company:</strong>
+                        Teejay Lanka PLC
                     </p>
 
-
-                    <a href="#contact" class="btn btn-primary">
-                        Start a Conversation →
-                    </a>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-
-        <!-- =====================================================
-             CONTACT
-        ====================================================== -->
-
-        <section id="contact">
-
-            <div class="container">
-
-
-                <div class="section-header reveal">
-
-                    <div class="section-label">
-                        Contact
-                    </div>
-
-
-                    <h2 class="section-title">
-                        Let's talk.
-                    </h2>
-
-
-                    <p class="section-description">
-
-                        Have a question, project or opportunity?
-                        Feel free to contact me.
-
+                    <p>
+                        <strong>Location:</strong>
+                        Block D8 – D14,
+                        Seethawaka Export Processing Zone,
+                        Avissawella, Sri Lanka.
                     </p>
 
                 </div>
-
-
-
-                <div class="contact-grid">
-
-
-                    <div class="contact-info reveal">
-
-
-                        <div class="contact-card">
-
-                            <small>
-                                Email
-                            </small>
-
-                            <strong>
-                                <a href="mailto:dasund640@gmail.com">
-                                    dasund640@gmail.com
-                                </a>
-                            </strong>
-
-                        </div>
-
-
-                        <div class="contact-card">
-
-                            <small>
-                                Phone
-                            </small>
-
-                            <strong>
-                                +94 71 055 5330
-                            </strong>
-
-                        </div>
-
-
-                        <div class="contact-card">
-
-                            <small>
-                                Location
-                            </small>
-
-                            <strong>
-                                Sri Lanka
-                            </strong>
-
-                        </div>
-
-
-                    </div>
-
-
-
-                    <div class="contact-message reveal">
-
-                        <h3>
-                            Interested in working together?
-                        </h3>
-
-
-                        <p>
-
-                            I'm always open to new opportunities,
-                            collaborations, creative projects and
-                            interesting ideas.
-
-                        </p>
-
-
-                        <a
-                            href="mailto:dasund640@gmail.com"
-                            class="btn btn-primary"
-                        >
-                            Email Me →
-                        </a>
-
-                    </div>
-
-
-                </div>
-
-            </div>
-
-        </section>
-
-    </main>
-
-
-
-    <!-- =========================================================
-         FOOTER
-    ========================================================== -->
-
-    <footer>
-
-        <div class="container footer-content">
-
-
-            <p>
-
-                © <span id="year"></span>
-                Dasun Udayanga.
-                All rights reserved.
-
-            </p>
-
-
-            <div class="socials">
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="Facebook"
-                >
-                    FB
-                </a>
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="Instagram"
-                >
-                    IG
-                </a>
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="LinkedIn"
-                >
-                    IN
-                </a>
-
-
-                <a
-                    href="#"
-                    class="social"
-                    title="GitHub"
-                >
-                    GH
-                </a>
-
 
             </div>
 
         </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+
+                <span>Capabilities</span>
+
+                <h2>Professional Skills</h2>
+
+                <p>
+                    Skills developed through professional experience
+                    and practical warehouse operations.
+                </p>
+
+            </div>
+
+
+            <div class="skills-grid">
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">📦</div>
+
+                    <h3>Inventory Management</h3>
+
+                    <p>
+                        Organizing, storing and monitoring inventory
+                        efficiently.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">📋</div>
+
+                    <h3>Order Fulfillment</h3>
+
+                    <p>
+                        Supporting accurate and efficient preparation
+                        of outbound orders.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">🚚</div>
+
+                    <h3>Warehouse Operations</h3>
+
+                    <p>
+                        Receiving, storing, staging and loading
+                        warehouse items.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">📊</div>
+
+                    <h3>Stock Counting</h3>
+
+                    <p>
+                        Supporting cycle counts and physical inventory
+                        verification.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">👥</div>
+
+                    <h3>Teamwork</h3>
+
+                    <p>
+                        Working effectively with colleagues to achieve
+                        operational goals.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">⏱️</div>
+
+                    <h3>Time Management</h3>
+
+                    <p>
+                        Completing warehouse tasks efficiently and
+                        according to schedules.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">🎯</div>
+
+                    <h3>Leadership</h3>
+
+                    <p>
+                        Taking responsibility and supporting efficient
+                        workplace operations.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">💬</div>
+
+                    <h3>Communication</h3>
+
+                    <p>
+                        Effective communication with team members
+                        during daily operations.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">🧠</div>
+
+                    <h3>Critical Thinking</h3>
+
+                    <p>
+                        Identifying operational issues and supporting
+                        practical solutions.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">📌</div>
+
+                    <h3>Project Management</h3>
+
+                    <p>
+                        Organizing tasks and supporting smooth completion
+                        of workplace activities.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">🤝</div>
+
+                    <h3>Public Relations</h3>
+
+                    <p>
+                        Maintaining professional communication and
+                        positive workplace relationships.
+                    </p>
+
+                </div>
+
+
+                <div class="skill-card reveal">
+
+                    <div class="skill-icon">🦺</div>
+
+                    <h3>Safety Awareness</h3>
+
+                    <p>
+                        Maintaining safe practices during warehouse
+                        handling and loading operations.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+
+                <span>Academic Background</span>
+
+                <h2>Education</h2>
+
+                <p>
+                    Educational qualifications provided in the CV.
+                </p>
+
+            </div>
+
+
+            <div class="education-grid">
+
+                <div class="education-card reveal">
+
+                    <div class="education-year">
+                        2014 – 2017
+                    </div>
+
+                    <h3>
+                        G.C.E. (Advanced Level) Examination
+                    </h3>
+
+                    <h4>
+                        Rathnawali National College
+                    </h4>
+
+                    <p>
+                        1 Credit &amp; 2 Simple Passes
+                    </p>
+
+                </div>
+
+
+                <div class="education-card reveal">
+
+                    <div class="education-year">
+                        2003 – 2014
+                    </div>
+
+                    <h3>
+                        G.C.E. (Ordinary Level) Examination
+                    </h3>
+
+                    <h4>
+                        Lenagala Maha Vidyalaya
+                    </h4>
+
+                    <p>
+                        5 Credits &amp; 2 Simple Passes
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LANGUAGE -->
+    <section>
+
+        <div class="container">
+
+            <div class="section-title reveal">
+
+                <span>Communication</span>
+
+                <h2>Language</h2>
+
+            </div>
+
+
+            <div class="language-box reveal">
+
+                <div class="language">
+
+                    <span>English</span>
+
+                    <span>Intermediate</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="section-title reveal">
+
+                <span>Get In Touch</span>
+
+                <h2>Contact Me</h2>
+
+                <p>
+                    For professional opportunities, employment
+                    inquiries or further information.
+                </p>
+
+            </div>
+
+
+            <div class="contact-grid">
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        📧
+                    </div>
+
+                    <h3>Email</h3>
+
+                    <p>
+                        dasund640@gmail.com
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        📞
+                    </div>
+
+                    <h3>Phone</h3>
+
+                    <p>
+                        +94 71 055 5330
+                    </p>
+
+                </div>
+
+
+                <div class="contact-card reveal">
+
+                    <div class="contact-icon">
+                        📍
+                    </div>
+
+                    <h3>Address</h3>
+
+                    <p>
+                        A331/2, Bogala Rd,<br>
+                        Mattamagoda,<br>
+                        Kotiyakumbura
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © <span id="year"></span>
+            <strong>Dasun Udayanga</strong>.
+            All Rights Reserved.
+        </p>
+
+        <p style="margin-top: 8px;">
+            Junior Associate – Warehouse
+        </p>
 
     </footer>
 
 
-
-    <!-- =========================================================
-         JAVASCRIPT
-    ========================================================== -->
-
     <script>
 
+        /* Mobile Menu */
 
-        /* =========================================================
-           MOBILE MENU
-        ========================================================== */
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
 
-        const menuBtn =
-            document.getElementById("menuBtn");
+        menuBtn.addEventListener("click", function () {
 
-        const navLinks =
-            document.getElementById("navLinks");
+            navLinks.classList.toggle("active");
 
-
-        menuBtn.addEventListener("click", () => {
-
-            navLinks.classList.toggle("open");
-
-
-            if (navLinks.classList.contains("open")) {
-
+            if (navLinks.classList.contains("active")) {
                 menuBtn.textContent = "✕";
-
             } else {
-
                 menuBtn.textContent = "☰";
-
             }
 
         });
 
 
-        /* Close mobile menu after clicking a link */
+        /* Close mobile menu after clicking */
 
-        document.querySelectorAll(".nav-link").forEach(link => {
+        document.querySelectorAll(".nav-links a").forEach(function(link) {
 
-            link.addEventListener("click", () => {
+            link.addEventListener("click", function() {
 
-                navLinks.classList.remove("open");
-
+                navLinks.classList.remove("active");
                 menuBtn.textContent = "☰";
 
             });
@@ -2305,80 +1527,23 @@
         });
 
 
+        /* Scroll Reveal */
 
-        /* =========================================================
-           HEADER SCROLL EFFECT
-        ========================================================== */
+        const revealElements =
+            document.querySelectorAll(".reveal");
 
-        const header =
-            document.getElementById("header");
+        function revealOnScroll() {
 
+            const windowHeight = window.innerHeight;
 
-        window.addEventListener("scroll", () => {
+            revealElements.forEach(function(element) {
 
-            if (window.scrollY > 50) {
+                const elementTop =
+                    element.getBoundingClientRect().top;
 
-                header.classList.add("scrolled");
+                if (elementTop < windowHeight - 80) {
 
-            } else {
-
-                header.classList.remove("scrolled");
-
-            }
-
-        });
-
-
-
-        /* =========================================================
-           ACTIVE NAVIGATION
-        ========================================================== */
-
-        const sections =
-            document.querySelectorAll("section[id]");
-
-        const navItems =
-            document.querySelectorAll(".nav-link");
-
-
-        function updateActiveNav() {
-
-            let currentSection = "";
-
-
-            sections.forEach(section => {
-
-                const sectionTop =
-                    section.offsetTop - 180;
-
-                const sectionHeight =
-                    section.offsetHeight;
-
-
-                if (
-                    window.scrollY >= sectionTop &&
-                    window.scrollY < sectionTop + sectionHeight
-                ) {
-
-                    currentSection =
-                        section.getAttribute("id");
-
-                }
-
-            });
-
-
-            navItems.forEach(link => {
-
-                link.classList.remove("active");
-
-
-                if (
-                    link.getAttribute("href") ===
-                    "#" + currentSection
-                ) {
-
-                    link.classList.add("active");
+                    element.classList.add("active");
 
                 }
 
@@ -2386,68 +1551,17 @@
 
         }
 
+        window.addEventListener("scroll", revealOnScroll);
 
-        window.addEventListener(
-            "scroll",
-            updateActiveNav
-        );
+        revealOnScroll();
 
 
-
-        /* =========================================================
-           SCROLL REVEAL ANIMATION
-        ========================================================== */
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-
-        const observer =
-            new IntersectionObserver(
-
-                (entries) => {
-
-                    entries.forEach(entry => {
-
-                        if (entry.isIntersecting) {
-
-                            entry.target.classList.add("show");
-
-                            observer.unobserve(
-                                entry.target
-                            );
-
-                        }
-
-                    });
-
-                },
-
-                {
-                    threshold: 0.12
-                }
-
-            );
-
-
-        revealElements.forEach(element => {
-
-            observer.observe(element);
-
-        });
-
-
-
-        /* =========================================================
-           CURRENT YEAR
-        ========================================================== */
+        /* Current Year */
 
         document.getElementById("year").textContent =
             new Date().getFullYear();
 
-
     </script>
 
 </body>
-
 </html>
